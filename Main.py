@@ -1,10 +1,13 @@
-
+from MenuJuego import MenuJuego
 from Ahorcado import Ahorcado
 from ManipulacionArchivo import ManipulacionArchivo
-
+from tkinter import *
 class Main:
   #VARIABLES GLOBALES
+  
   def main():
+    menu= MenuJuego()
+    menu.menu()
     obj= ManipulacionArchivo()
     ahorcado=Ahorcado()
     opcion=True;
@@ -15,9 +18,7 @@ class Main:
       print("MENU DE OPCIONES")
       print("0 >>>>> Jugar")
       print("1 >>>>> Agregar Personajes")
-      #INCOMPLETO
       print("2 >>>>> Crear una lista Nueva de Personajes")
-      #INCOMPLETO
       print("3 >>>>> Cambiar Lista Actual De Personajes")
       print("4 >>>>> Ver Todas las listas")
       print("5 >>>>> Salir")

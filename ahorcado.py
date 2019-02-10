@@ -4,11 +4,11 @@ class Ahorcado:
 	  palabraSecreta=""
 	  for i in lineas:
 	    if i==" ":
-	      palabraSecreta=palabraSecreta+" "
+	      palabraSecreta=palabraSecreta+"  "
 	    elif i==".":
-	      palabraSecreta=palabraSecreta+"."
+	      palabraSecreta=palabraSecreta+". "
 	    else:
-	      palabraSecreta=palabraSecreta+"_"
+	      palabraSecreta=palabraSecreta+"_ "
 	   
 	  return(palabraSecreta)
 	def letrasEncontradas(self,adivinar):

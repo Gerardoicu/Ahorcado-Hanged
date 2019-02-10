@@ -1,10 +1,23 @@
-from tkinter import *
-import mp3play
+import tkinter as tk
+from winsound import PlaySound, SND_FILENAME, SND_LOOP, SND_ASYNC
 
-root = Tk() # create tkinter window
 
-f = mp3play.load('Sound.mp3'); play = lambda: f.play()
-button = Button(root, text = 'Play', command = play)
+class App:
 
-button.pack()
+    def __init__(self, master):
+        frame = tk.Frame(master)
+        frame.pack()
+        self.button = tk.Button(frame, text='play', command=self.play_sound)
+        self.button.pack(side=tk.LEFT)
+        self.button2 = tk.Button(frame, text='stop', command=self.stop_sound)
+        self.button2.pack(side=tk.LEFT)
+
+    def play_sound(self):
+        PlaySound('tili.wav', SND_FILENAME|SND_LOOP|SND_ASYNC)
+
+    def stop_sound(self):
+        PlaySound(None, SND_FILENAME)
+
+root = tk.Tk()
+app = App(root)
 root.mainloop()
